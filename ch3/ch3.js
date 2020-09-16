@@ -127,3 +127,57 @@ console.log(arr.length); // 101
 
 arr.length = 100;
 console.log(arr[100]); // undefined
+
+var colorsArray = ["orange", "yellow", "green"];
+var colorsObj = {
+  0: "orange",
+  1: "yellow",
+  2: "green",
+};
+
+console.log(typeof colorsArray, typeof colorsObj); // object object
+console.log(colorsArray.length, colorsObj.length); // 3 undefined
+
+colorsArray.push("red"); // ['orange', 'yellow', 'green', 'red']
+// colorsObj.push("red"); // Uncaught TypeError: Object #<Object> has no method 'push'
+
+var arr = ["zero", "one", "two"];
+
+arr.color = "blue";
+arr.name = "numberArray";
+
+console.log(arr);
+console.log(arr.length);
+
+for (var prop in arr) {
+  console.log(prop, arr[prop]);
+}
+
+for (var i = 0; i < arr.length; i++) {
+  console.log(i, arr[i]);
+}
+
+var arr = ["zero", "one", "two", "three"];
+
+arr.splice(2, 1); // 2번째 요소를 시작점으로 1개의 원소를 삭제한다.
+console.log(arr);
+arr.splice(1, 2, "four"); // 1번째 요소를 시작점으로 2개의 원소를 삭제하고 'four'을 추가한다.
+console.log(arr);
+
+var foo = new Array(3);
+console.log(foo);
+console.log(foo.length);
+
+var bar = new Array(1, 2, 3);
+console.log(bar);
+
+var obj = {
+  name: "foo",
+  length: 1,
+};
+
+Array.prototype.push.apply(obj, ["baz"]);
+console.log(obj);
+
+console.log(1 == "1"); // true
+console.log(1 === "1"); // false
