@@ -333,7 +333,8 @@ outerFunc 실행 컨텍스트는 사라졌지만, outerFunc 변수 객체는 여
     obj1.call(); // hello donghak
 
     실행 순서
-    obj1.call() --> obj1.func('hello') --> newObj['who']('hello', 'donghak') --> console.log('hello' + 'donghak') --> hello donghak
+    obj1.call() --> obj1.func('hello') --> obj1['who']('hello', 'donghak') --> newObj['who']('hello', 'donghak') -->
+     console.log('hello' + 'donghak') --> hello donghak
 
 #### 5.4.2.2 함수의 캡슐화
 
